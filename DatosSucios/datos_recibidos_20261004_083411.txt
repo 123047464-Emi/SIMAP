@@ -1,0 +1,4 @@
+[10/4/2026 8:34:11 AM] Servicio iniciado, escuchando en puerto 5050.
+[10/4/2026 8:40:06 AM] ERROR cliente: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+[10/4/2026 8:43:21 AM] ERROR cliente: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+[10/4/2026 8:44:47 AM] Cliente desconectado.

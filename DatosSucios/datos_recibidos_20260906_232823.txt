@@ -1,0 +1,22 @@
+[9/6/2026 11:28:24 PM] Servicio iniciado, escuchando en puerto 5050.
+[9/7/2026 10:58:10 PM] OPC: WriteWeight(3, ML12|0.965,0.966,0.910,0.914,0.937) enviado.
+[9/7/2026 10:59:06 PM] OPC: WriteWeight(3, ML12|0.982,0.978,0.938,0.924,0.958) enviado.
+[9/8/2026 1:05:12 AM] OPC: WriteWeight(3, ML12|0.928,0.922,0.875,0.879,0.887) enviado.
+[9/8/2026 1:10:22 AM] OPC: WriteWeight(3, ML12|1.067,1.075,1.031,1.040,1.052) enviado.
+[9/8/2026 2:51:30 AM] OPC: WriteWeight(3, ML12|0.967,0.970,0.927,0.926,0.938) enviado.
+[9/8/2026 4:58:53 AM] OPC: WriteWeight(3, ML12|0.940,0.944,0.892,0.891,0.899) enviado.
+[9/8/2026 5:02:33 AM] OPC: WriteWeight(3, ML12|1.033,1.038,1.000,1.009,1.027) enviado.
+[9/8/2026 6:36:56 AM] OPC: WriteWeight(3, ML12|0.972,0.973,0.930,0.929,0.936) enviado.
+[9/8/2026 8:38:39 AM] OPC: WriteWeight(3, ML12|0.909,0.912,0.860,0.867,0.878) enviado.
+[9/8/2026 8:42:53 AM] OPC: WriteWeight(3, ML12|1.043,1.055,1.003,1.012,1.030) enviado.
+[9/8/2026 11:12:53 AM] OPC: WriteWeight(3, ML12|0.990,0.993,0.947,0.949,0.956) enviado.
+[9/8/2026 1:20:19 PM] OPC: WriteWeight(3, ML12|0.949,0.947,0.905,0.907,0.910) enviado.
+[9/8/2026 2:37:39 PM] OPC: WriteWeight(3, ML12|1.005,1.006,0.960,0.959,0.964) enviado.
+[9/8/2026 4:31:01 PM] OPC: WriteWeight(3, ML12|0.991,0.994,0.951,0.959,0.957) enviado.
+[9/8/2026 6:45:19 PM] OPC: WriteWeight(3, ML12|1.092,1.110,1.032,1.047,1.055) enviado.
+[9/8/2026 6:49:27 PM] OPC: WriteWeight(3, ML12|1.088,1.069,1.025,1.040,1.056) enviado.
+[9/8/2026 8:38:12 PM] OPC: WriteWeight(3, ML12|0.926,0.920,0.875,0.874,0.880) enviado.
+[9/8/2026 8:41:59 PM] OPC: WriteWeight(3, ML12|1.044,1.053,1.008,1.022,1.038) enviado.
+[9/17/2026 10:40:21 AM] Cliente desconectado.
+[9/17/2026 11:29:57 AM] Cliente desconectado.
+[9/17/2026 1:33:47 PM] Servicio detenido correctamente.

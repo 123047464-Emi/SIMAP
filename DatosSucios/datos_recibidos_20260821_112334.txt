@@ -1,0 +1,2 @@
+[8/21/2026 11:23:34 AM] Servicio iniciado, escuchando en puerto 5050.
+[8/21/2026 11:27:47 AM] Servicio detenido correctamente.
