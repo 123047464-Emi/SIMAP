@@ -189,24 +189,21 @@ sns.histplot(
 plt.title("Distribución B_VEL")
 plt.show()
 
-print("----------")
-sns.boxplot(
-    x=datos_procesos_limpio["B_PRES"]
-)
+#ANALISIS DE PESOS
 
-print("----------")
-sns.boxplot(
-    x=datos_procesos_limpio["W_PRES"]
-)
+def clasificar_peso(peso):
+    if peso < 0.90:
+        return "Bajo"
+    elif peso > 1.10:
+        return  "Alto"
+    else:
+        return "Normal"
 
-print("----------")
-sns.boxplot(
-    x=datos_procesos_limpio["B_TOR"]
-)
-
-print("----------")
-sns.boxplot(
-    x=datos_procesos_limpio["W_TOR"]
-)
+datos_pesos["categoria"] = datos_pesos["peso_promedio"].apply(clasificar_peso)
 
 
+print("\nDistribución de categorías de peso")
+print(datos_pesos["categoria"].value_counts())
+
+print("\nPorcentaje")
+print(datos_pesos["categoria"].value_counts(normalize=True) * 100)
