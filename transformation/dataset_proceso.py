@@ -60,6 +60,6 @@ for archivo in archivos:
 
 df = pd.DataFrame(registros)
 
-#df.to_csv( "Dataset_proceso.csv",index=False)
+df.to_csv( "Union_procesos.csv",index=False)
 print(df.head())
 print("Dataset de variables de proceso generado correctamente")
