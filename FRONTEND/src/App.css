@@ -1,0 +1,33 @@
+/* Elimina los márgenes predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* Página completa */
+body {
+  background-color: #091321;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor general */
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Organiza el menú y el contenido horizontalmente */
+.app-body {
+  display: flex;
+  min-height: calc(100vh - 65px);
+  padding-top: 5%;
+}
+
+/* Espacio donde construiremos el dashboard */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+}

@@ -1,6 +1,8 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-datos_procesos = pd.read_csv(r"C:/Users/EmilyHernand/Documents/Modelo prediccion/Union_procesos.csv")
+datos_procesos = pd.read_csv(r"C:/Users/EmilyHernand/Documents/Modelo prediccion/procesos_unidos.csv")
 
 datos_pesos = pd.read_csv(r"C:/Users/EmilyHernand/Documents/Modelo prediccion/Dataset_pesos.csv")
 
@@ -11,7 +13,7 @@ datos_procesos["fecha"] = pd.to_datetime(datos_procesos["fecha"])
 datos_pesos["fecha"] = pd.to_datetime(datos_pesos["fecha"],format="%m/%d/%Y %I:%M:%S %p")
 
 #Eliminar filas vacias 
-columnas_analisis = ['B_CPOS', 'B_RPOS', 'B_VEL', 'B_TOR', 'B_PRES','CONTEXT','W_CPOS', 'W_RPOS', 'W_VEL', 'W_TOR', 'W_PRES']
+columnas_analisis = ['B_CPOS', 'B_RPOS', 'B_VEL', 'B_TOR', 'B_PRES','W_CPOS', 'W_RPOS', 'W_VEL', 'W_TOR', 'W_PRES']
 
 filas_vacias = datos_procesos[datos_procesos[columnas_analisis].isna().all(axis=1)]
 print(f"Cantidad de filas vacías: {len(filas_vacias)}")
@@ -94,8 +96,10 @@ for _, peso in datos_pesos.iterrows():
     desviacion_B_pres=ventana["B_PRES"].std()
     desviacion_B_tor=ventana["B_TOR"].std()
 
+
     fila={
         "fecha": fecha_peso,
+        "modelo":peso["modelo"],
         "peso_promedio": peso["peso_promedio"],
         "categoria": peso["categoria"],
         "promedio_W_PRES": promedio_w_pres,
@@ -113,11 +117,18 @@ for _, peso in datos_pesos.iterrows():
     DatasetFinal.append(fila)
     print(f"\nTamaño del dataset final: {len(DatasetFinal)}")
 
+
+
+
 DatasetFinal = pd.DataFrame(DatasetFinal)
     #Convertir la lista de diccionario en una tabla
 print(DatasetFinal.head(20))
 print(DatasetFinal.shape)
 #DatasetFinal.to_csv("Ejemplo.csv",index=False)
+
+print("-----------")
+promedio=DatasetFinal['promedio_W_PRES'].max()
+print(promedio)
 
 print("\n Filas vacías")
 
@@ -135,3 +146,22 @@ Dataset_limpio =DatasetFinal[DatasetFinal[columnas_analisis].notna().all(axis=1)
 print("\n Después de eliminar filas vacías")
 print(Dataset_limpio.shape)
 print(Dataset_limpio.head(20))
+
+print("----------------------------------")
+
+DatasetFinal = DatasetFinal.drop(columns=["categoria"])
+
+DatasetFinal["modelo"]=(DatasetFinal["modelo"]=="ML12").astype(int)
+correlation_matrix=DatasetFinal.corr(method='spearman')
+print ("\n Matríz de correlación spearman")
+plt.figure(figsize=(8, 6))
+sns.heatmap(
+    correlation_matrix,
+    annot=True,        # Mostrar valores numéricos
+    fmt=".2f",         # Formato de los números
+    cmap="coolwarm",   # Colores
+    square=True        # Celdas cuadradas
+)
+plt.title("Matriz de correlación spearman", fontsize=14)
+plt.tight_layout()
+plt.show() 

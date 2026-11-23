@@ -1,0 +1,94 @@
+.header {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 46px; /* Altura del encabezado */
+
+  background-color: #091321; /* Fondo azul oscuro */
+
+  border-bottom: 1px solid #243447; /* Línea inferior */
+
+  display: flex; /* Coloca los elementos en una misma fila */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Separa el logo y la información */
+
+  padding: 0 2px; /* Espacio interno a los lados */
+  box-sizing: border-box; /* Evita que el padding aumente el ancho */
+  padding-top: 5%;
+}
+
+.header-logo {
+  display: flex; /* Coloca el icono y el texto en una fila */
+  align-items: center; /* Los centra verticalmente */
+  gap: 12px; /* Espacio entre el icono y SIMAP */
+}
+
+/* Texto SIMAP */
+.header-logo h1 {
+  color: #e8f0f8; /* Color del texto */
+  font-size: 40px; /* Tamaño de letra */
+  letter-spacing: 3px; /* Espacio entre letras */
+  font-weight: 700; /* Grosor de letra */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+.logo-icon {
+  width: 19px; /* Ancho del icono */
+  height: 19px; /* Alto del icono */
+
+  border: 2px solid #43bdd0; /* Borde color turquesa */
+
+  transform: rotate(45deg); /* Gira el cuadrado 45 grados */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cuadrado pequeño dentro del icono */
+.logo-icon span {
+  width: 9px;
+  height: 9px;
+  border: 1px solid #43bdd0;
+}
+
+
+.header-info {
+  display: flex; /* Coloca estado, reloj y datos en una fila */
+  align-items: center; /* Centra verticalmente */
+  gap: 25px; /* Espacio entre cada elemento */
+}
+
+
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 7px; /* Espacio entre el punto y el texto */
+
+  padding: 5px 10px; /* Espacio interno */
+
+  border: 1px solid #793a42; /* Borde rojizo */
+  border-radius: 5px; /* Esquinas redondeadas */
+
+  color: #dce5ef; /* Color del texto */
+  font-size: 10px; /* Tamaño de letra */
+}
+
+/* Punto rojo que indica una falla */
+.status-indicator {
+  width: 7px;
+  height: 7px;
+
+  background-color: #ff515b; /* Color rojo */
+
+  border-radius: 50%; /* Convierte el cuadrado en círculo */
+
+  box-shadow: 0 0 7px #ff515b; /* Efecto de brillo */
+}
+
+.header-clock {
+  color: #dce5ef;
+  font-size: 26px;
+  letter-spacing: 1px;
+
+  font-family: monospace; /* Fuente de estilo digital */
+}

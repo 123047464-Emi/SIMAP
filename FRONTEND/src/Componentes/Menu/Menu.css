@@ -1,0 +1,72 @@
+.sidebar {
+  width: 230px; /* Ancho del menú lateral */
+  height: 100%; /* Ocupa toda la altura disponible */
+
+  background-color: #0B1727; /* Fondo azul oscuro */
+
+  border-right: 1px solid #243447; /* Línea divisoria derecha */
+
+  padding: 20px 12px; /* Espacio interno */
+
+  box-sizing: border-box; /* Controla el tamaño total */
+}
+
+
+
+.sidebar-menu {
+  display: flex; /* Organiza las opciones */
+  flex-direction: column; /* Coloca una opción debajo de otra */
+
+  gap: 8px; /* Espacio entre las opciones */
+}
+
+
+.menu-item {
+  display: flex; /* Coloca icono y texto en una fila */
+
+  align-items: center; /* Centra verticalmente */
+
+  gap: 12px; /* Espacio entre icono y texto */
+
+  padding: 12px 14px; /* Espacio interno */
+
+  border-radius: 6px; /* Esquinas redondeadas */
+
+  color: #A5B4C5; /* Color del texto */
+
+  cursor: pointer; /* Cambia el cursor al pasar encima */
+
+  transition: background-color 0.2s ease;
+}
+
+.menu-item span {
+  font-size: 19px; /* Tamaño del icono */
+
+  width: 22px; /* Espacio reservado para el icono */
+
+  text-align: center;
+}
+
+
+.menu-item p {
+  font-size: 14px; /* Tamaño de letra */
+
+  margin: 0; /* Elimina el margen predeterminado */
+
+  font-weight: 500; /* Grosor de letra */
+}
+
+
+.menu-item.active {
+  background-color: #18334A; /* Fondo de la opción activa */
+
+  color: #54C4DC; /* Texto e icono turquesa */
+
+  border-left: 3px solid #54C4DC; /* Indicador lateral */
+}
+
+
+.menu-item:hover {
+  background-color: #15283C; /* Cambia el fondo */
+  color: #FFFFFF; /* Aclara el texto */
+}
