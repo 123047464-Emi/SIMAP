@@ -7,8 +7,9 @@
   border-right: 1px solid #243447; /* Línea divisoria derecha */
 
   padding: 20px 12px; /* Espacio interno */
-
   box-sizing: border-box; /* Controla el tamaño total */
+
+  padding-top: 10%;
 }
 
 
@@ -16,8 +17,7 @@
 .sidebar-menu {
   display: flex; /* Organiza las opciones */
   flex-direction: column; /* Coloca una opción debajo de otra */
-
-  gap: 8px; /* Espacio entre las opciones */
+  gap: 20px; /* Espacio entre las opciones */
 }
 
 
@@ -70,3 +70,4 @@
   background-color: #15283C; /* Cambia el fondo */
   color: #FFFFFF; /* Aclara el texto */
 }
+

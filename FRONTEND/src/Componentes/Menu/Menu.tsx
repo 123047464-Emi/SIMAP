@@ -1,38 +1,59 @@
-import './Menu.css'
+import './Menu.css';
+import type { ReactNode } from 'react';
+import { LuLayoutDashboard, LuBell,  LuHistory} from "react-icons/lu";
 
-function Menu(){
-    return(
-        <aside className="sidebar">
-            {/*Lista de opciones del menu*/}
-            <div className="sidebar-menu">
+// Definimos los nombres de las secciones disponibles.
+export type Seccion =
+  | 'Línea de producción'
+  | 'Alertas'
+  | 'Historial'
 
-                {/*Opción 1*/}
-                <div className="sidebar-item active">
-                    <span></span>
-                    <p>Opciones disponibles</p>
-                </div>
+// Definimos qué información recibirá el menú desde App.tsx.
+type SidebarProps = {
+  seccionActiva: Seccion;
+  onCambiarSeccion: (seccion: Seccion) => void;
+};
 
-                {/*Opción 2*/}
-                <div className='menu-item'>
-                    <span></span>
-                    <p>Línea de producción</p>
-                </div>
+function Menu({ seccionActiva, onCambiarSeccion }: SidebarProps) {
 
-                {/*Opción 3 */}
-                <div className="menu-item">
-                    <span></span>
-                    <p>Alertas</p>
-                </div>
+  // Opciones que tendrá nuestro menú.
+  const opciones: { nombre: Seccion, icono: ReactNode }[] = [
+    { nombre: 'Línea de producción', icono:<LuLayoutDashboard/>},
+    { nombre: 'Alertas', icono:<LuBell/>},
+    { nombre: 'Historial', icono:<LuHistory/>}
+  ];
 
-                {/*Opción 4*/}
-                <div className="menu-item">
-                    <span></span>
-                    <p>Historial</p>
-                </div>
+  return (
+    <aside className="sidebar">
 
-            </div>
-        </aside>
-    );
+      <nav className="sidebar-menu">
+
+        {/* Recorremos las opciones para crear un botón por cada una. */}
+        {opciones.map((opcion) => (
+
+          <button
+            type="button"
+            key={opcion.nombre}
+
+            // Si la opción coincide con la seleccionada, tendrá la clase active.
+            className={`menu-item ${
+              seccionActiva === opcion.nombre ? 'active' : ''
+            }`}
+
+            // Cuando se pulse, avisamos a App.tsx qué sección se eligió.
+            onClick={() => onCambiarSeccion(opcion.nombre)}
+          >
+            <span></span>
+            <p>{opcion.nombre}</p>
+
+          </button>
+
+        ))}
+
+      </nav>
+
+    </aside>
+  );
 }
 
 export default Menu;
