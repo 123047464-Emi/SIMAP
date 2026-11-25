@@ -1,12 +1,18 @@
-import { BsCardList } from "react-icons/bs";
+import './Cards.css'
 
-function CardEstado(){
+type CardProps={
+    titulo: string;
+    valor: number;
+    color: string;
+};
+
+function Cards({titulo, valor, color}: CardProps){
     return(
-        <>
-        <h1>Estado actual de la linea</h1>
-        <BsCardList></BsCardList>
-        </>
+        <div className="card" style={{borderTop: `3px solid ${color}`}}>
+            <h3>{titulo}</h3>
+            <h2>{valor}</h2>
+        </div>
     );
 }
 
-export default CardEstado;
+export default Cards;

@@ -1,0 +1,13 @@
+.card-style{
+    display: flex; /*Coloca elementos uno a un lado del otro*/
+    gap: 20px; /*Separación en pixeles entre tarjetas*/
+    width: 100%;
+    align-items: stretch; /*Misma altura en la fila*/
+}
+
+.card-line{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}

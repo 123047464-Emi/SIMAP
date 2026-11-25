@@ -8,7 +8,7 @@
 
 /* Página completa */
 body {
-  background-color: #091321;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
 }
 
@@ -16,13 +16,15 @@ body {
 .app {
   width: 100%;
   min-height: 100vh;
+  display: flex; /*Organiza el encabezado y el cuerpo verticalmente*/
+  flex-direction: column;
 }
 
 /* Organiza el menú y el contenido horizontalmente */
 .app-body {
   display: flex;
-  min-height: calc(100vh - 65px);
-  padding-top: 5%;
+  flex: 1;
+  min-height: 0;
 }
 
 /* Espacio donde construiremos el dashboard */

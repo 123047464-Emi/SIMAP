@@ -1,33 +1,24 @@
 .header {
   width: 100%; /* Ocupa todo el ancho disponible */
-  height: 46px; /* Altura del encabezado */
+  height: 65px; /* Altura del encabezado */
 
-  background-color: #091321; /* Fondo azul oscuro */
+  background-color:#ffffff; /*#091321; /* Fondo azul oscuro */
 
-  border-bottom: 1px solid #243447; /* Línea inferior */
+  border-bottom: 1px solid #7eace3; /* Línea inferior */
 
   display: flex; /* Coloca los elementos en una misma fila */
   align-items: center; /* Centra los elementos verticalmente */
   justify-content: space-between; /* Separa el logo y la información */
 
-  padding: 0 2px; /* Espacio interno a los lados */
+  padding: 0 25px; /* Espacio interno a los lados */
   box-sizing: border-box; /* Evita que el padding aumente el ancho */
-  padding-top: 5%;
+  /*padding-top: 5%;*/
 }
 
 .header-logo {
   display: flex; /* Coloca el icono y el texto en una fila */
   align-items: center; /* Los centra verticalmente */
   gap: 12px; /* Espacio entre el icono y SIMAP */
-}
-
-/* Texto SIMAP */
-.header-logo h1 {
-  color: #e8f0f8; /* Color del texto */
-  font-size: 40px; /* Tamaño de letra */
-  letter-spacing: 3px; /* Espacio entre letras */
-  font-weight: 700; /* Grosor de letra */
-  margin: 0; /* Elimina el margen predeterminado */
 }
 
 .logo-icon {
@@ -86,9 +77,31 @@
 }
 
 .header-clock {
-  color: #dce5ef;
+  color: #183656;
   font-size: 26px;
   letter-spacing: 1px;
 
   font-family: monospace; /* Fuente de estilo digital */
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: monospace;
+}
+
+.header-logo h1 {
+  color: #041f3b;
+  font-size: 35px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-text p {
+  color: #183656;
+  font-size: 12px;
+  margin: 0;
+  letter-spacing: 0.5px;
 }

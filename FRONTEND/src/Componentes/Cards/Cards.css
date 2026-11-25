@@ -1,0 +1,27 @@
+.card{
+    background-color: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px; /*Redondea las esquinas*/
+    padding: 20px; /*Crea contenido entre bordes y contenido*/
+    box-sizing: border-box; /*Hace que el contenido contenga border y padding*/
+    flex:none;
+    min-width: 0;
+    min-height: 80px;
+    width: 180px;
+    height: 80px;
+    flex-shrink: 0; /*Evita que se redusca el tamaño si hay poco*/
+}
+
+.card h3{
+    font-size: 14px;
+    font-weight: 500; /*Grosor de letra*/
+    color: #526a82;
+    margin: 0;
+}
+
+.card h2{
+    font-size: 28px;
+    font-weight: 600;
+    color:#1E293B;
+    margin: 5px 0 0; /*Arriba*/
+}

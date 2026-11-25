@@ -1,6 +1,6 @@
 import { useState } from 'react';
 //import type { ReactNode } from 'react';
-
+import './App.css'
 import Header from './Componentes/Header/Header';
 import Menu, {type Seccion} from './Componentes/Menu/Menu';
 

@@ -1,73 +1,57 @@
+
 .sidebar {
-  width: 230px; /* Ancho del menú lateral */
-  height: 100%; /* Ocupa toda la altura disponible */
+  width: 230px;
+  flex-shrink: 0;
 
-  background-color: #0B1727; /* Fondo azul oscuro */
+  /* Ocupa el espacio disponible */
+  align-self: stretch;
 
-  border-right: 1px solid #243447; /* Línea divisoria derecha */
+  background-color: #ffffff;
+  border-right: 1px solid #cfd1d3;
 
-  padding: 20px 12px; /* Espacio interno */
-  box-sizing: border-box; /* Controla el tamaño total */
-
-  padding-top: 10%;
+  padding: 100px 12px; /*260*/
+  box-sizing: border-box;
 }
-
-
 
 .sidebar-menu {
-  display: flex; /* Organiza las opciones */
-  flex-direction: column; /* Coloca una opción debajo de otra */
-  gap: 20px; /* Espacio entre las opciones */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-
 .menu-item {
-  display: flex; /* Coloca icono y texto en una fila */
-
-  align-items: center; /* Centra verticalmente */
-
-  gap: 12px; /* Espacio entre icono y texto */
-
-  padding: 12px 14px; /* Espacio interno */
-
-  border-radius: 6px; /* Esquinas redondeadas */
-
-  color: #A5B4C5; /* Color del texto */
-
-  cursor: pointer; /* Cambia el cursor al pasar encima */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dde1e7;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #666a6e;
+  cursor: pointer;
 
   transition: background-color 0.2s ease;
 }
 
 .menu-item span {
-  font-size: 19px; /* Tamaño del icono */
-
-  width: 22px; /* Espacio reservado para el icono */
-
+  font-size: 19px;
+  width: 22px;
   text-align: center;
 }
 
-
 .menu-item p {
-  font-size: 14px; /* Tamaño de letra */
-
-  margin: 0; /* Elimina el margen predeterminado */
-
-  font-weight: 500; /* Grosor de letra */
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
 }
-
 
 .menu-item.active {
-  background-color: #18334A; /* Fondo de la opción activa */
-
-  color: #54C4DC; /* Texto e icono turquesa */
-
-  border-left: 3px solid #54C4DC; /* Indicador lateral */
+  background-color: #18334A;
+  color: #54C4DC;
+  border-left: 3px solid #54C4DC;
 }
-
 
 .menu-item:hover {
-  background-color: #15283C; /* Cambia el fondo */
-  color: #FFFFFF; /* Aclara el texto */
+  background-color: #15283C;
+  color: #938b8b;
 }
-

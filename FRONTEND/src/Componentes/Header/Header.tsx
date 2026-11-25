@@ -1,9 +1,26 @@
-// Importamos los estilos CSS del encabezado.
+import { useState, useEffect } from 'react';
 import './Header.css';
 
 // Creamos el componente Header.
 // Un componente es una parte de la interfaz que podemos reutilizar.
 function Header() {
+
+  //Obtenemos la hora actual del equipo
+  const [hora, setHora]=useState(new Date())
+  //Agregamos la actualizacion de fecha
+  useEffect(()=>{
+    //Actualizamos la hora cada segundo
+    const intervalo=setInterval(()=>{
+      setHora(new Date())
+    }, 1000);
+
+    return () => clearInterval(intervalo);
+  })
+
+  //
+  const horario = hora.toLocaleTimeString('es-MX', {
+    hour12: false
+  });
 
   // return indica qué elementos se van a mostrar en pantalla.
   return (
@@ -12,8 +29,11 @@ function Header() {
     <header className="header">
       {/* Contenedor que agrupa el icono y el nombre */}
       <div className="header-logo">
-        {/* Nombre del sistema */}
-        <h1>SIMAP</h1>
+        <div className='header-text'>
+          {/* Nombre del sistema */}
+          <h1>SIMAP</h1>
+          <p>Sistema inteligente de mantenimiento preventivo para equipos de producción</p>
+        </div>
       </div>
 
 
@@ -23,7 +43,7 @@ function Header() {
 
         {/* Reloj del sistema */}
         <div className="header-clock">
-          21:44:12
+          {horario}
         </div>
 
       </div>
