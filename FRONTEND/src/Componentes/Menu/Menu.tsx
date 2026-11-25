@@ -1,11 +1,12 @@
 import './Menu.css';
 import type { ReactNode } from 'react';
-import { LuLayoutDashboard, LuBell,  LuHistory} from "react-icons/lu";
+import { LuLayoutDashboard, LuBell,  LuHistory, LuSettings} from "react-icons/lu";
 
 // Definimos los nombres de las secciones disponibles.
 export type Seccion =
   | 'Línea de producción'
   | 'Alertas'
+  | 'Maquinas'
   | 'Historial'
 
 // Definimos qué información recibirá el menú desde App.tsx.
@@ -20,6 +21,7 @@ function Menu({ seccionActiva, onCambiarSeccion }: SidebarProps) {
   const opciones: { nombre: Seccion, icono: ReactNode }[] = [
     { nombre: 'Línea de producción', icono:<LuLayoutDashboard/>},
     { nombre: 'Alertas', icono:<LuBell/>},
+    { nombre: 'Maquinas', icono: <LuSettings/>},
     { nombre: 'Historial', icono:<LuHistory/>}
   ];
 

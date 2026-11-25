@@ -8,6 +8,7 @@ import Menu, {type Seccion} from './Componentes/Menu/Menu';
 import LineaProduccion from './pages/LineaProduccion';
 import Alertas from './pages/Alertas';
 import Historial from './pages/Historial';
+import Maquinas from './pages/Maquinas'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   const ventanas = {
     'Línea de producción': <LineaProduccion />,
     'Alertas': <Alertas />,
+    'Maquinas': <Maquinas/>,
     'Historial': <Historial />
   };
 

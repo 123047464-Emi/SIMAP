@@ -1,0 +1,29 @@
+/* Tarjeta individual de cada máquina */
+.maquina-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    padding: 20px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #D9E2EC;
+    border-radius: 12px;
+    box-sizing: border-box;
+    
+}
+
+.maquina-card h3{
+    font-size: 14px;
+    font-weight: 500; /*Grosor de letra*/
+    color: #526a82;
+    margin: 0;
+}
+
+.maquina-card h2{
+    font-size: 28px;
+    font-weight: 600;
+    color:#1E293B;
+    margin: 25px 0 0 -40px; /*Arriba*/
+}

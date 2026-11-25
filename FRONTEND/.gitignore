@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Librerias
+_pywrap_tensorflow_internal.*

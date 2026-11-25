@@ -10,4 +10,47 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    font-size: 19px;
+    font-weight: 500;
+    color: #041f3b;
+    margin: 0 0 8px 0;
+}
+
+.card-style{
+    display: flex; /*Coloca elementos uno a un lado del otro*/
+    gap: 20px; /*Separación en pixeles entre tarjetas*/
+    width: 100%;
+    align-items: stretch; /*Misma altura en la fila*/
+}
+
+.card-line{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/*Estilos de la ventana de alertas*/
+
+.alert-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.alert h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #041f3b;
+    margin: 0 0 8px 0;
+}
+
+
+/*Estilos de la ventana de maquinas*/
+.maquinas h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #041f3b;
+    margin: 0 0 8px 0;
 }

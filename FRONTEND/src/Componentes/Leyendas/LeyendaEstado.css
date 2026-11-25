@@ -1,33 +1,33 @@
 .leyenda-estado{
     display:flex;
     align-items: center;
-    gap:25px;
+    gap:30px;
 }
 
 .indicador{
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     display: inline-block;
 }
 
 .normal{
-    background-color: #22C55E;
+    background-color: #19c70c;
 }
 
 .alerta{
-    background-color: #e1dd1f;
+    background-color: #ffd426;
 }
 
 .estado{
     display:flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .estado p{
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
     color: #64748B;
     font-weight: 500;
 }

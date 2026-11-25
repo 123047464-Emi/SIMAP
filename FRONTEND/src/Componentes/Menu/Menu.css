@@ -23,11 +23,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #dde1e7;
   padding: 10px 14px;
   border-radius: 6px;
-  background-color: #ffffff;
-  color: #666a6e;
+  background-color: #DDF5FA;
+  border: 1px solid #65D9ED;
+  color: #0d5d71;
   cursor: pointer;
 
   transition: background-color 0.2s ease;
@@ -46,12 +46,12 @@
 }
 
 .menu-item.active {
-  background-color: #18334A;
+  background-color: #b9f3ff;
   color: #54C4DC;
   border-left: 3px solid #54C4DC;
 }
 
 .menu-item:hover {
-  background-color: #15283C;
+  background-color: #C5EDF5;
   color: #938b8b;
 }

@@ -1,0 +1,64 @@
+/* Tarjeta de cada alerta */
+.alert-style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+    width: 100%;
+    padding: 18px 20px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #D9E2EC;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Información de la alerta */
+.alert-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Título */
+.alert-info h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #172638;
+    margin: 0;
+}
+
+/* Descripción */
+.alert-info h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #71869F;
+    margin: 0;
+}
+
+/* Botón */
+.alerta-boton {
+    background-color: #DDF5FA;
+    border: 1px solid #65D9ED;
+    color: #0785A5;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Efecto al pasar el cursor */
+.alerta-boton:hover {
+    background-color: #C5EDF5;
+}
+
+

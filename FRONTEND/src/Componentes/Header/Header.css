@@ -80,15 +80,13 @@
   color: #183656;
   font-size: 26px;
   letter-spacing: 1px;
-
-  font-family: monospace; /* Fuente de estilo digital */
 }
 
 .header-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: monospace;
+  font-family: Verdana;
 }
 
 .header-logo h1 {
