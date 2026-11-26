@@ -1,13 +1,7 @@
 
 import CardMaquinas from "../Componentes/Maquinas/Card_Maquinas";
 import type { MaquinasProps } from "../Componentes/Maquinas/Card_Maquinas";
-
-import {
-    FaChartLine,
-    FaHammer,
-    FaCogs,
-    FaMicrochip
-} from "react-icons/fa";
+import { TiPipette } from "react-icons/ti";
 
 import "./pages.css";
 
@@ -15,43 +9,36 @@ import "./pages.css";
 const maquinas: MaquinasProps[] = [
     {
         modelo: "M-01",
-        nombre: "Alimentador de piezas",
-        icono: <FaChartLine />,
+        nombre: "Gap filler 1",
+        icono: <TiPipette />,
         estado: "Normal",
-        presion: "4.30 bar",
-        torque: "36.1 N·m",
+        presion: "127",
+        torque: "0.52",
+        pesos: "0.98",
         riesgo: 9,
         salud: 92
     },
     {
         modelo: "M-02",
-        nombre: "Prensa hidráulica",
-        icono: <FaHammer />,
-        estado: "Advertencia",
-        presion: "201.85 bar",
-        torque: "532.8 N·m",
-        riesgo: 51,
-        salud: 53
+        nombre: "Gap Filler 2",
+        icono: <TiPipette />,
+        estado: "Normal",
+        presion: "125",
+        torque: "0.5",
+        pesos: "0.94",
+        riesgo: 8,
+        salud: 92
     },
     {
         modelo: "M-03",
-        nombre: "Robot de ensamble",
-        icono: <FaCogs />,
+        nombre: "Gap filler 3",
+        icono: <TiPipette />,
         estado: "Normal",
-        presion: "6.14 bar",
-        torque: "64.6 N·m",
+        presion: "143",
+        torque: "0.52",
+        pesos: "0.92",
         riesgo: 7,
         salud: 93
-    },
-    {
-        modelo: "M-04",
-        nombre: "Fresadora CNC",
-        icono: <FaMicrochip />,
-        estado: "Crítico",
-        presion: "6.75 bar",
-        torque: "30.7 N·m",
-        riesgo: 78,
-        salud: 28
     }
 ];
 
@@ -65,7 +52,7 @@ function Maquinas() {
                 <h1>Máquinas</h1>
 
                 <p>
-                    Maquinas disponibles en la linea de produccion.
+                    Máquinas disponibles en la línea de producción BMW EVO.
                     Selecciona una para abrir su dashboard de monitoreo
                     y mantenimiento predictivo.
                 </p>

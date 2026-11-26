@@ -13,6 +13,7 @@ export type MaquinasProps = {
     estado: EstadoMaquina;
     presion: string;
     torque: string;
+    pesos: string;
     riesgo: number;
     salud: number;
 };
@@ -24,6 +25,7 @@ function CardMaquinas({
     estado,
     presion,
     torque,
+    pesos,
     riesgo,
     salud
 }: MaquinasProps) {
@@ -62,6 +64,10 @@ function CardMaquinas({
                 <div className="indicador">
                     <span>Torque</span>
                     <strong>{torque}</strong>
+                </div>
+                <div className="indicador">
+                    <span>Peso</span>
+                    <strong>{pesos}</strong>
                 </div>
 
             </div>
