@@ -54,3 +54,35 @@
     color: #041f3b;
     margin: 0 0 8px 0;
 }
+
+/* Página de máquinas */
+.maquinas {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.maquinas-encabezado {
+    margin-bottom: 18px;
+}
+
+.maquinas-encabezado h1 {
+    margin: 0 0 8px;
+    color: #172B45;
+    font-size: 26px;
+}
+
+.maquinas-encabezado p {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+/* Distribución de tarjetas */
+.maquinas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+}

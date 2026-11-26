@@ -1,18 +1,83 @@
-import './Card_Maquinas.css'
 
-type MaquinasProps={
-    titulo:string
-    estado: string
-    color:  string
+import type { ReactNode } from "react";
+import "./Card_Maquinas.css";
 
-}
+// Estados posibles de una máquina.
+export type EstadoMaquina = "Normal" | "Advertencia" | "Crítico";
 
-function CardMaquinas({titulo, estado, color}:MaquinasProps){
-    return(
-    <div className='maquina-card' style={{ borderTop: `3px solid ${color}` }}>
-        <h2>{titulo}</h2>
-        <h3>{estado}</h3>
-    </div>
+// Información que recibirá cada tarjeta.
+export type MaquinasProps = {
+    modelo: string;
+    nombre: string;
+    icono: ReactNode;
+    estado: EstadoMaquina;
+    presion: string;
+    torque: string;
+    riesgo: number;
+    salud: number;
+};
+
+function CardMaquinas({
+    modelo,
+    nombre,
+    icono,
+    estado,
+    presion,
+    torque,
+    riesgo,
+    salud
+}: MaquinasProps) {
+
+    return (
+        <div className={`tarjeta-maquina estado-${estado.toLowerCase()}`}>
+
+            {/* Encabezado */}
+            <div className="tarjeta-encabezado">
+
+                <div className="tarjeta-identificacion">
+                    <div className="tarjeta-icono">
+                        {icono}
+                    </div>
+
+                    <div>
+                        <span>{modelo}</span>
+                        <h3>{nombre}</h3>
+                    </div>
+                </div>
+
+                <span className="estado-maquina">
+                    {estado}
+                </span>
+
+            </div>
+
+            {/* Indicadores */}
+            <div className="tarjeta-indicadores">
+
+                <div className="indicador">
+                    <span>Presión</span>
+                    <strong>{presion}</strong>
+                </div>
+
+                <div className="indicador">
+                    <span>Torque</span>
+                    <strong>{torque}</strong>
+                </div>
+
+            </div>
+
+            {/* Riesgo y salud */}
+            <div className="tarjeta-resumen">
+                <span>Riesgo {riesgo}/100</span>
+                <span>Salud {salud}%</span>
+            </div>
+
+            {/* Barra de riesgo */}
+            <div className="barra-riesgo">
+                <div style={{ width: `${riesgo}%` }} />
+            </div>
+
+        </div>
     );
 }
 

@@ -1,29 +1,158 @@
-/* Tarjeta individual de cada máquina */
-.maquina-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 
+/* Tarjeta de cada máquina */
+.tarjeta-maquina {
     width: 100%;
-    padding: 20px;
-
+    padding: 18px;
     background-color: #FFFFFF;
     border: 1px solid #D9E2EC;
-    border-radius: 12px;
+    border-top: 4px solid #19B86A;
+    border-radius: 10px;
     box-sizing: border-box;
-    
+    width: 500px;
+    height: 250px;
 }
 
-.maquina-card h3{
+/* Encabezado de la tarjeta */
+.tarjeta-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Identificación de la máquina */
+.tarjeta-identificacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icono de la máquina */
+.tarjeta-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #EAF4FA;
+    border-radius: 8px;
+    color: #1685B5;
+    font-size: 22px;
+}
+
+/* Código y área */
+.tarjeta-identificacion span {
+    color: #718096;
+    font-size: 12px;
+}
+
+/* Nombre de la máquina */
+.tarjeta-identificacion h3 {
+    margin: 4px 0 0;
+    color: #243447;
     font-size: 14px;
-    font-weight: 500; /*Grosor de letra*/
-    color: #526a82;
-    margin: 0;
 }
 
-.maquina-card h2{
-    font-size: 28px;
+/* Estado de la máquina */
+.estado-maquina {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #E5F7ED;
+    color: #168B4B;
+    font-size: 12px;
     font-weight: 600;
-    color:#1E293B;
-    margin: 25px 0 0 -40px; /*Arriba*/
 }
+
+
+
+/* Contenedor de los indicadores */
+.tarjeta-indicadores {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Divide en dos partes iguales*/
+    gap: 20px 24px;
+    margin-bottom: 55px;
+}
+
+/* Cada indicador */
+.indicador {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* Nombre del indicador */
+.indicador span {
+    color: #718096;
+    font-size: 12px;
+}
+
+/* Valor del indicador */
+.indicador strong {
+    color: #243447;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* Resumen de riesgo y salud */
+.tarjeta-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Texto de riesgo y salud */
+.tarjeta-resumen span {
+    color: #526477;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Barra de riesgo */
+.barra-riesgo {
+    width: 100%;
+    height: 10px;
+    background-color: #E5EAF0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Nivel de riesgo */
+.barra-riesgo div {
+    height: 100%;
+    background-color: #19B86A;
+    border-radius: 10px;
+}
+
+/* Color superior según el estado */
+.tarjeta-maquina.estado-normal {
+    border-top: 4px solid #19B86A;
+}
+
+.tarjeta-maquina.estado-advertencia {
+    border-top: 4px solid #F0A42B;
+}
+
+.tarjeta-maquina.estado-crítico {
+    border-top: 4px solid #E5484D;
+}
+
+/* Estado normal */
+.estado-normal .estado-maquina {
+    background-color: #E5F7ED;
+    color: #168B4B;
+}
+
+/* Estado de advertencia */
+.estado-advertencia .estado-maquina {
+    background-color: #FFF3D9;
+    color: #C47B12;
+}
+
+/* Estado crítico */
+.estado-crítico .estado-maquina {
+    background-color: #FDE8E8;
+    color: #D93636;
+}
+
