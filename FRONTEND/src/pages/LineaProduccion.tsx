@@ -1,5 +1,6 @@
 import Cards from "../Componentes/Cards/Cards";
 import './pages.css'
+import VisorMaquina3D from "../features/Simulacion3D/Simulacion3D/Componentes/VisorMaquina3D";
 import LeyendaEstado from "../Componentes/Leyendas/LeyendaEstado";
 import { IoSettingsSharp } from "react-icons/io5";
 import { CiCircleCheck } from "react-icons/ci";
@@ -14,6 +15,7 @@ function LineaProduccion(){
                 <Cards titulo='En funcionamiento' valor={6} color= "#19c70c" icono={<CiCircleCheck />} />
                 <Cards titulo="Con alarma" valor={0} color= "#ffd426" icono={<GiAlarmClock />}/>
             </div>
+            <VisorMaquina3D/>
             <LeyendaEstado/>
         </div>
     );

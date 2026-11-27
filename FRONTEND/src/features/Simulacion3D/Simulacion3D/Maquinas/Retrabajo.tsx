@@ -6,14 +6,14 @@ import Base from './Piezas/Base';
 import Gabinete from './Piezas/Gabinete';
 import Estructura from './Piezas/Estructura';
 import Cabezales from './Piezas/Cabezales';
-import Bascula from './Piezas/Bascula';
-import Cartuchos from './Piezas/Cartuchos';
+//import Bascula from './Piezas/Bascula';
+//import Cartuchos from './Piezas/Cartuchos';
 import TorreLuz from './Piezas/TorreLuz';
 import type { EstadoMaquina } from './Piezas/TorreLuz';
 
 
-// Función para construir la máquina Gap Filler
-function GapFiller() {
+// Función para construir la máquina Atornillador
+function Retrabajo() {
 
     // Creamos un grupo para reunir todas las piezas de la máquina
     const maquina = new THREE.Group();
@@ -28,20 +28,10 @@ function GapFiller() {
 
     // Agregamos todas las piezas al grupo de la máquina
     // El orden importa porque el visor utiliza la primera pieza (Base)
-    maquina.add(
-        Base(),
-        Gabinete(),
-        Estructura(),
-        cabezales,
-        Bascula(),
-        Cartuchos(),
-        torre
-    );
-
+    maquina.add(Base(),Gabinete(),Estructura(),torre);
 
     // Definimos el estado inicial de la máquina
     let estado: EstadoMaquina = 'normal';
-
 
     // Función para cambiar el estado de la máquina
     maquina.userData.fijarEstado = (nuevoEstado: EstadoMaquina) => {
@@ -50,11 +40,7 @@ function GapFiller() {
         estado = nuevoEstado;
 
         // Definimos la velocidad de los cabezales según el estado
-        const velocidades = {
-            normal: 1,
-            advertencia: 0.5,
-            falla: 0
-        };
+        const velocidades = {normal: 1,advertencia: 0.5,falla: 0};
 
         // Aplicamos la velocidad correspondiente
         cabezales.userData.fijarVelocidad(velocidades[nuevoEstado]);
@@ -79,4 +65,4 @@ function GapFiller() {
     return maquina;
 }
 
-export default GapFiller;
+export default Retrabajo;

@@ -6,30 +6,9 @@ import "./Card_Maquinas.css";
 export type EstadoMaquina = "Normal" | "Advertencia" | "Crítico";
 
 // Información que recibirá cada tarjeta.
-export type MaquinasProps = {
-    modelo: string;
-    nombre: string;
-    icono: ReactNode;
-    estado: EstadoMaquina;
-    presion: string;
-    torque: string;
-    pesos: string;
-    riesgo: number;
-    salud: number;
-};
+export type MaquinasProps = {modelo: string;nombre: string;icono: ReactNode;estado: EstadoMaquina;presion: string;torque: string;pesos: string;riesgo: number;salud: number;};
 
-function CardMaquinas({
-    modelo,
-    nombre,
-    icono,
-    estado,
-    presion,
-    torque,
-    pesos,
-    riesgo,
-    salud
-}: MaquinasProps) {
-
+function CardMaquinas({modelo,nombre,icono,estado,presion,torque,pesos,riesgo,salud}: MaquinasProps) {
     return (
         <div className={`tarjeta-maquina estado-${estado.toLowerCase()}`}>
 
