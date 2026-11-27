@@ -1,8 +1,8 @@
+
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
 import './VisorMaquina3D.css';
-import Base from "../Maquinas/GapFiller/Piezas/Base";
-import Estructura from "../Maquinas/GapFiller/Piezas/Estructuras";
+import GapFiller from "../Maquinas/GapFiller/GapFiller";
 
 function VisorMaquina3D() {
   const contenedorRef = useRef<HTMLDivElement>(null);
@@ -15,56 +15,68 @@ function VisorMaquina3D() {
     escena.background = new THREE.Color("#f1f2f3");
 
     // Cámara
-    const camara = new THREE.PerspectiveCamera(45,600 / 400,0.1,1000 );
+    const camara = new THREE.PerspectiveCamera(
+      45,
+      600 / 400,
+      0.1,
+      1000
+    );
 
-    camara.position.set(0, 0, 5);
+    camara.position.set(10, 8, 12);
     camara.lookAt(0, 0, 0);
 
     // Renderizador
-    const renderer = new THREE.WebGLRenderer({antialias: true,});
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+    });
 
     renderer.setSize(600, 400);
 
-    contenedorRef.current.appendChild(renderer.domElement);
+    // Evita acumular lienzos si el efecto vuelve a ejecutarse.
+    contenedorRef.current.replaceChildren(renderer.domElement);
 
-    //Piso 
+    // Piso
     const gpiso = new THREE.PlaneGeometry(20, 20);
-    const materialpiso= new THREE.MeshStandardMaterial({color: "#DCE3EA"});
-    const piso= new THREE.Mesh(gpiso, materialpiso)
+    const materialpiso = new THREE.MeshStandardMaterial({
+      color: "#DCE3EA"
+    });
+
+    const piso = new THREE.Mesh(gpiso, materialpiso);
     piso.rotation.x = -Math.PI / 2;
     piso.position.y = -1;
-    escena.add(piso)
+    escena.add(piso);
 
     // Iluminación
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     escena.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff,2);
 
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
     directionalLight.position.set(5, 4, 7);
-    camara.lookAt(0, 0, 0); //Hace que la camara mire hacia el centro
     escena.add(directionalLight);
 
-    //Creamos la bse 
-    const base = Base();
-    escena.add(base);
+    // Creamos la Gap Filler
+    const maquina = GapFiller();
 
-    const estructura = Estructura();
-    escena.add(estructura)
+    //Separamos en el eje x, la base mide 5 de ancho
+    //maquina1.position.x=-3;
+
+    escena.add(maquina);
 
     // Animación
-    const animate = () => {
-      requestAnimationFrame(animate);
+    let animationId: number;
 
-      //cube.rotation.x += 0.01;
-      //cube.rotation.y += 0.01;
+    const animate = () => {
+      animationId = requestAnimationFrame(animate);
       renderer.render(escena, camara);
     };
-
+    
     animate();
 
     // Limpieza
     return () => {
+      cancelAnimationFrame(animationId);
       renderer.dispose();
+
       if (
         contenedorRef.current &&
         contenedorRef.current.contains(renderer.domElement)
@@ -75,7 +87,10 @@ function VisorMaquina3D() {
   }, []);
 
   return (
-    <div ref={contenedorRef}className="visor-maquina-3D"/>
+    <div
+      ref={contenedorRef}
+      className="visor-maquina-3D"
+    />
   );
 }
 
